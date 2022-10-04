@@ -3,20 +3,20 @@ public class Reservation {
     int[] ReservationDays = new int[30];
 
     public void insertDate(int month, int day){
-        FirstDay = month*30 + day;
+        int days = month*30 + day;
 
-        for(int i=0 ; i++ ; i<30){
-            this.ReservationDays[i]=FirstDay
-            FirstDay++;
+        for(int i=0; i<30; i++){
+            this.ReservationDays[i]=days;
+            days++;
         }
     }
 
-    public validateReservation(Book B){
+    public void validateReservation(Book B){
             int flag_prenotazione=0;
             int[] BookingDays = B.getBookingDays();
 
-            for(int i=0; i++; i<30){
-                for(int j=0; j++; j<30) {
+            for(int i=0; i<30; i++){
+                for(int j=0; i<30; i++) {
                     if (BookingDays[i] == ReservationDays[j]) {
                         i = 30;
                         j = 30;
